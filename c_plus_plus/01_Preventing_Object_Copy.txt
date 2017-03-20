@@ -1,0 +1,43 @@
+There are three ways to prevent an object copy: 
+1. keeping the copy constructor and assignment operator private
+2. using a special non-copyable mixin
+3. deleting those special member functions(C++11)
+
+Method 1: Private copy constructor and copy assignment operator
+
+class Car {
+public:
+  Car(): owner() {}
+  void setOwner(Person *o) { owner = o; }
+  Person *getOwner() const { return owner; }
+  void info() const;
+private:
+  Car(const Car&);
+  Car& operator=(const Car&);
+  Person *owner;
+};
+
+Method 2: Non-copyable mixin
+
+Boost users may be already familiar with boost::noncopyable, the Boost flavor of the said mixin. A conceptual, self-contained implementation of that mixin will resemble something like the following:
+
+Compared to the first method, using Noncopyable has the benefit of making the intention very clear. A quick glance at the class, right on its first line, and you know right away that its instance is not supposed to be copied.
+
+
+Method 3: Deleted copy constructor and copy assignment operator
+
+For modern applications, there is less and less reason to get stuck with the above workaround. Thanks to C++11, the solution becomes magically simple: just delete the copy constructor and assignment operator. Our class will look like this instead:
+
+class Car {
+public:
+  Car(const Car&) = delete;
+  void operator=(const Car&) = delete;
+  Car(): owner() {}
+  void setOwner(Person *o) { owner = o; }
+  Person *getOwner() const { return owner; }
+private:
+  Person *owner;
+};
+
+
+
