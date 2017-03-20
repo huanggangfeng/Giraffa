@@ -1,0 +1,7 @@
+
+// Normal pointer to smart pointer
+int* iPtr = new int(42);
+shared_ptr<int> p(iPtr);
+
+// Smart pointer to normal pointer
+int *pi = p.get();

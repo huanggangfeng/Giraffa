@@ -1,3 +1,5 @@
+References: https://ariya.io/2015/01/c-class-and-preventing-object-copy
+
 There are three ways to prevent an object copy: 
 1. keeping the copy constructor and assignment operator private
 2. using a special non-copyable mixin
