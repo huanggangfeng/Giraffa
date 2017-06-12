@@ -1,3 +1,3 @@
 If your define the copy-construction function， you had better to define the default construction function.
-Actually, we should use copy constructor function and operator as a same unit. if you need one of them, you also need another one.
+Actually, we should use copy constructor function and assignment operator as a same unit. if you need one of them, you also need another one.
 If you need to define the destructor, you also need to define the copy constructor and operator. this is call the rule of three
