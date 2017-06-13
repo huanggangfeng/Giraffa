@@ -1,0 +1,14 @@
+
+
+char is used for so called ANSI family of functions (typically function name ends with A), 
+or more commonly known as using ASCII character set.
+
+wchar_t is used for new so called Unicode (or Wide) family of functions (typically function name ends with W), 
+which use UTF-16 character set. It is very similar to UCS-2, but not quite it. If character requires more than 2 bytes,
+it will be converted into 2 composite codepoints, and this can be very confusing.
+
+
+WCHAR (or wchar_t on Visual C++ compiler) is used for Unicode UTF-16 strings.
+This is the "native" string encoding used by Win32 APIs.
+
+CHAR (or char) can be used for several other string formats: ANSI, MBCS, UTF-8.

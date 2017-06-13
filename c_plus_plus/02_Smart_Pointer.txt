@@ -5,3 +5,31 @@ shared_ptr<int> p(iPtr);
 
 // Smart pointer to normal pointer
 int *pi = p.get();
+
+
+
+upArray = new int[nArrayLength]();  // <- won't work... not explicit
+upArray = unique_ptr<int[]>( new int[nArrayLength]() );  // <- will work.  Is explicit  
+
+#include <iostream>
+#include <memory>
+
+using namespace std;
+
+unique_ptr<int[]> upArray;
+
+int main()
+{
+    int nArrayLength = 10;
+
+    //upArray = new int[nArrayLength](); //Allocate  an Array with 10 int values initialized with 0;
+    upArray = unique_ptr<int []>(new int[nArrayLength]);
+
+    for (int i = 0; i < nArrayLength; i++) // fill the array with 0,1,2,3,4,5,6,7,8,9 and display the numbers
+    {
+        //*(upArray + i) = i;
+        upArray[i] = i;
+        cout << upArray[i];
+    }
+    return 0;
+}

@@ -43,3 +43,8 @@ private:
 
 
 
+class car {
+  car();
+  car (const car&) = delete;
+  car & operator =(const car&);
+};

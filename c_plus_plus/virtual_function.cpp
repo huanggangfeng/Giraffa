@@ -20,7 +20,7 @@ class B : public A
 public:
     B() { cout << "Create B" << endl;}
     virtual ~B() {cout << "delete B" << endl;}
-    virtual void f() { cout << "B()::f()" << endl; };
+     void f() { cout << "B()::f()" << endl; };
 };
 
 class C : public B

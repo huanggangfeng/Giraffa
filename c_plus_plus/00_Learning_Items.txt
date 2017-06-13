@@ -8,10 +8,10 @@
 8.  Iterator
 9.  Copy construct function
 10. Dynamic cast and other cast
-11. Exception
+11. Exception handle
 12. Virtural Function/pure virtual class and other virtual related things
 13. Static and Inline
-14. String and vector
+14. String/wstring/char*/vector
 15. IO
-16. cast
-
+17. lambda
+18. Hash table
