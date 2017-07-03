@@ -12,7 +12,7 @@ using namespace std;
         int j = 0;
         // 121
         while((i-j)>0 && (i+j) <len)
-        {   
+        {
             cout << "j1:" << j << endl;
             if(s[i-j] == s[i+j])
             {
@@ -34,7 +34,7 @@ using namespace std;
         // 1221
         j = 0;
         while(i-j >= 0 && i+j <len)
-        {   
+        {
             cout << "j2:" << j << endl;
             if(s[i-j] == s[i+j+1])
             {
@@ -49,7 +49,7 @@ using namespace std;
         // {
         //     cout << "max_len2:" << new_len2 << endl;
         //     max_len = new_len2;
-        //     start = i - (j -1 ); 
+        //     start = i - (j -1 );
         //     stop = i + j;
         //     cout << "start: " << start << endl;
         // }
@@ -75,4 +75,3 @@ int main()
 
 
 // l
-

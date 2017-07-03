@@ -7,9 +7,11 @@ shared_ptr<int> p(iPtr);
 int *pi = p.get();
 
 
+// <- won't work... not explicit
+upArray = new int[nArrayLength]();
 
-upArray = new int[nArrayLength]();  // <- won't work... not explicit
-upArray = unique_ptr<int[]>( new int[nArrayLength]() );  // <- will work.  Is explicit  
+// <- will work.  Is explicit
+upArray = unique_ptr<int[]>( new int[nArrayLength]() );
 
 #include <iostream>
 #include <memory>
