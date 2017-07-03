@@ -14,7 +14,8 @@ int main()
 
     ret = myset.insert(5);
 
-    std::cout << "ret.first: " << *ret.first << " ret.second :" << ret.second << std::endl;
+    std::cout << "ret.first: " << *ret.first << " ret.second :"
+              << ret.second << std::endl;
     for(it=myset.begin(); it!=myset.end();++it)
     {
         std::cout<< *it << '\t';

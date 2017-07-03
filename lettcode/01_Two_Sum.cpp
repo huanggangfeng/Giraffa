@@ -17,7 +17,7 @@ public:
                     v.push_back(std::distance(nums.begin(), j));
                     return v;
                 }
-            }   
+            }
         }
     }
 };
@@ -38,5 +38,3 @@ int main()
     std::cout << std::endl;
     return 0;
 }
-
-

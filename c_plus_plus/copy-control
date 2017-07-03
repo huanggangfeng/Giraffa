@@ -1,8 +1,12 @@
-If your define the copy-construction function， you had better to define the default construction function.
-Actually, we should use copy constructor function and assignment operator as a same unit. if you need one of them, you also need another one.
-If you need to define the destructor, you also need to define the copy constructor and operator. this is call the rule of three
+If your define the copy-construction function， you had better to define the
+default construction function.
+Actually, we should use copy constructor function and assignment operator as a
+same unit. if you need one of them, you also need another one.
+If you need to define the destructor, you also need to define the copy
+constructor and operator. this is call the rule of three
 
-short-circuit evaluation if not supported in operator overwrite 
-If you want to define the operator as non-menmber function, add keyword friend for it.
+short-circuit evaluation if not supported in operator overwrite
+If you want to define the operator as non-member function, add keyword friend
+for it.
 
-If you re-define the operator as non-menmber function, you must add the word "friend" for it.
+If you re-define the operator as non-member function, you must add the word "friend" for it.

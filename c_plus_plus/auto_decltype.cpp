@@ -1,4 +1,8 @@
-// The purpose of decltype is to provide a standardized version of typeof. Since the result is not identical to the existing compiler extension typeof (and there were probably conflicting versions out there, I'm not sure), the term typeof could not be used. Instead, the previously unused term decltype was chosen. So in C++11, we can now write
+// The purpose of decltype is to provide a standardized version of typeof.
+// Since the result is not identical to the existing compiler extension typeof
+ // (and there were probably conflicting versions out there, I'm not sure),
+ // the term typeof could not be used. Instead, the previously unused term
+  // decltype was chosen. So in C++11, we can now write
 // template<typename T, typename S>
 // void foo(T lhs, S rhs) {
 //   typedef decltype(lhs * rhs) product_type;
