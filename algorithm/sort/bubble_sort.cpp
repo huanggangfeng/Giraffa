@@ -13,12 +13,15 @@ int main()
    int temp;
 
    srand(time(NULL));
-   for (it = a.begin(); it!=a.end();it++)
-      *it = rand()%100;
-   
-//   sort(a.begin(), a.end());
+   for (auto &ai : a)
+      ai = rand()%100;
+
+   for (auto ai: a)
+         cout << ai << " ";
+   std::cout << '\n';
+
    for (int i = 0; i < a.size(); ++i)
-   {  
+   {
       for (int j = 0; j < a.size() - i - 1; ++j)
       {
          if (a[j] > a[j+1])
@@ -28,9 +31,9 @@ int main()
             a[j] = temp;
          }
       }
-   }   
+   }
 
-   for (it = a.begin(); it!=a.end();it++)
-      cout << *it << " ";
-   cout << endl;
+   for (auto ai: a)
+      std::cout << ai << " ";
+   std::cout << '\n';
 }
