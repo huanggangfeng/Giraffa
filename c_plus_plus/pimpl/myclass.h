@@ -2,10 +2,9 @@
 #define __MY_CLASS_H__
 
 #include <memory>
+
 class MyclassImpl;
-
 class Myclass {
-
 public:
    Myclass ();
    virtual ~Myclass ();
