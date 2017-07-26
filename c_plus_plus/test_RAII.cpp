@@ -10,21 +10,38 @@
 
 using namespace std;
 
-class test_resource
-{
-public:
-    test_resource();
-    ~test_resource();
+class test_RAII {
 private:
+   int *res;
+   int m_size;
+
+public:
+   test_RAII (int n)
+   : m_size(n)
+   {
+      res = new int[n];
+      for(int i = 0; i < n; ++i)
+         res[i] = i;
+   }
+
+   virtual ~test_RAII ()
+   {
+      std::cout << "delete res is called" << '\n';
+      delete [] res;
+   }
+
+   int operator [](int n)
+   {
+      if (n < 0 || n >= m_size)
+         return 0;
+      else
+         return res[n];
+   }
 };
 
-test_resource::test_resource()
-{
-
-}
-
-int main()
-{
-
-    return 0;
+int main(int argc, char const *argv[]) {
+   test_RAII test(5);
+   int ret = test[4];
+   std::cout << "ret is: " << ret << '\n';
+   return 0;
 }
