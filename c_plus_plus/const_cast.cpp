@@ -27,6 +27,22 @@
 
 using namespace std;
 
+class A {
+public:
+   A () {std::cout << "Create A" << '\n';}
+   virtual ~A () {std::cout << "Destroy A" << '\n';}
+};
+
+class B : public A {
+private:
+   /* data */
+
+public:
+   B ()  {std::cout << "Create B" << '\n';}
+   virtual ~B () {std::cout << "Destroy B" << '\n';}
+};
+
+
 int main()
 {
     int i = 3;
@@ -46,5 +62,10 @@ int main()
     // The result is 5
     cout << "j: " << j << endl;
 
+    B testb;
+    A testa;
+    A *a=&testb;
+    B *bp = dynamic_cast<B*> (a);
+    A *ap = dynamic_cast<A*> (&testb);
     return 0;
 }
